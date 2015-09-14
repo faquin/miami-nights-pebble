@@ -6,10 +6,10 @@ static bool is24hrFormat = true;
 Window* _window;
 static Layer* window_layer;
 
-TextLayer* date_text_layer;
-static char date_text[] = "\0\0\0\0\0";
-const char dateFormat[] = "%d%m";
-static GFont s_font_teko_sb_20;
+//TextLayer* date_text_layer;
+//static char date_text[] = "\0\0\0\0\0";
+//const char dateFormat[] = "%d%m";
+//static GFont s_font_teko_sb_20;
 
 static BitmapLayer* hours_tens_layer = NULL;
 static BitmapLayer* hours_ones_layer = NULL;
@@ -187,21 +187,21 @@ static void handle_tick(struct tm *tick_time, TimeUnits units_changed){
   }    
 #endif
   
-  strftime(date_text, sizeof(date_text), dateFormat, tick_time);
-  text_layer_set_text(date_text_layer, date_text);
+  //strftime(date_text, sizeof(date_text), dateFormat, tick_time);
+  //text_layer_set_text(date_text_layer, date_text);
 }
 
 static void window_load(Window *window) {    
   window_layer = window_get_root_layer(window);
   
-  s_font_teko_sb_20 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_TEKO_SB_20));
+  //s_font_teko_sb_20 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_TEKO_SB_20));
   
-  date_text_layer = text_layer_create(GRect(77, 145, 144, 50));
-  text_layer_set_text_color(date_text_layer, GColorMalachite);
-  text_layer_set_background_color(date_text_layer, GColorClear);
-  text_layer_set_text(date_text_layer, date_text);
-  text_layer_set_font(date_text_layer, s_font_teko_sb_20);
-  layer_add_child(window_layer, text_layer_get_layer(date_text_layer));
+  //date_text_layer = text_layer_create(GRect(77, 145, 144, 50));
+  //text_layer_set_text_color(date_text_layer, GColorMalachite);
+  //text_layer_set_background_color(date_text_layer, GColorClear);
+  //text_layer_set_text(date_text_layer, date_text);
+  //text_layer_set_font(date_text_layer, s_font_teko_sb_20);
+  //layer_add_child(window_layer, text_layer_get_layer(date_text_layer));
   
   time_t now = time(NULL);
   struct tm *tick_time = localtime(&now);
@@ -210,8 +210,8 @@ static void window_load(Window *window) {
 
 
 static void window_unload(Window *window) {
-  text_layer_destroy(date_text_layer);
-  fonts_unload_custom_font(s_font_teko_sb_20);
+  //text_layer_destroy(date_text_layer);
+  //fonts_unload_custom_font(s_font_teko_sb_20);
   unload_bitmap(&hours_tens_layer, &hours_tens);
   unload_bitmap(&hours_ones_layer, &hours_ones);
   unload_bitmap(&minutes_tens_layer, &minutes_tens);
