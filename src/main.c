@@ -191,6 +191,16 @@ static void handle_tick(struct tm *tick_time, TimeUnits units_changed){
   //text_layer_set_text(date_text_layer, date_text);
 }
 
+
+static void bt_handler(bool connected) {
+  // Show current connection state
+  if (connected) {
+    vibes_long_pulse(); // vibrate long pulse when connection is back
+  } else {
+    vibes_double_pulse(); // vibrate two short pulses when connection is lost
+  }
+}
+
 static void window_load(Window *window) {    
   window_layer = window_get_root_layer(window);
   
@@ -206,6 +216,9 @@ static void window_load(Window *window) {
   time_t now = time(NULL);
   struct tm *tick_time = localtime(&now);
   handle_tick(tick_time, MINUTE_UNIT);
+  
+  // Show current connection state
+  bt_handler(bluetooth_connection_service_peek());
 }
 
 
@@ -233,6 +246,11 @@ void handle_init(void) {
                                | SECOND_UNIT
 #endif
                                , handle_tick);
+  
+  // Subscribe to Bluetooth updates
+  // example from http://developer.getpebble.com/guides/pebble-apps/app-events/bluetooth-connection/
+  bluetooth_connection_service_subscribe(bt_handler);
+  
 }
 
 void handle_deinit(void) {
