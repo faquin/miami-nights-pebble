@@ -9,39 +9,8 @@
     "resources": {
         "media": [
             {
-                "file": "images/Icon1984Sml.png",
-                "menuIcon": true,
-                "name": "IMAGE_ICON",
-                "type": "png"
-            },
-            {
                 "file": "images/9.png",
                 "name": "IMAGE_B_TL_9",
-                "type": "png"
-            },
-            {
-                "file": "images/8.png",
-                "name": "IMAGE_B_TL_8",
-                "type": "png"
-            },
-            {
-                "file": "images/7.png",
-                "name": "IMAGE_B_TL_7",
-                "type": "png"
-            },
-            {
-                "file": "images/6.png",
-                "name": "IMAGE_B_TL_6",
-                "type": "png"
-            },
-            {
-                "file": "images/5.png",
-                "name": "IMAGE_B_TL_5",
-                "type": "png"
-            },
-            {
-                "file": "images/4.png",
-                "name": "IMAGE_B_TL_4",
                 "type": "png"
             },
             {
@@ -50,13 +19,40 @@
                 "type": "png"
             },
             {
-                "file": "images/2.png",
-                "name": "IMAGE_B_TL_2",
+                "file": "images/7.png",
+                "name": "IMAGE_B_TL_7",
                 "type": "png"
             },
             {
-                "file": "images/1.png",
-                "name": "IMAGE_B_TL_1",
+                "characterRegex": "[0-9]",
+                "file": "fonts/Teko-SemiBold.ttf",
+                "name": "FONT_TEKO_SB_20",
+                "type": "font"
+            },
+            {
+                "file": "images/6.png",
+                "name": "IMAGE_B_TL_6",
+                "type": "png"
+            },
+            {
+                "file": "images/4.png",
+                "name": "IMAGE_B_TL_4",
+                "type": "png"
+            },
+            {
+                "file": "images/8.png",
+                "name": "IMAGE_B_TL_8",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon1984Sml.png",
+                "menuIcon": true,
+                "name": "IMAGE_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/2.png",
+                "name": "IMAGE_B_TL_2",
                 "type": "png"
             },
             {
@@ -65,10 +61,14 @@
                 "type": "png"
             },
             {
-                "characterRegex": "[0-9]",
-                "file": "fonts/Teko-SemiBold.ttf",
-                "name": "FONT_TEKO_SB_20",
-                "type": "font"
+                "file": "images/1.png",
+                "name": "IMAGE_B_TL_1",
+                "type": "png"
+            },
+            {
+                "file": "images/5.png",
+                "name": "IMAGE_B_TL_5",
+                "type": "png"
             }
         ]
     },
