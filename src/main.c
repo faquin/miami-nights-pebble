@@ -217,8 +217,6 @@ static void window_load(Window *window) {
   struct tm *tick_time = localtime(&now);
   handle_tick(tick_time, MINUTE_UNIT);
   
-  // Show current connection state
-  bt_handler(bluetooth_connection_service_peek());
 }
 
 
